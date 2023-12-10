@@ -4,37 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainMenu">
+    tools:context=".ChooseDiscipline">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="233dp"
-        android:layout_height="86dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="88dp"
-        android:text="Выберите чем хотите заняться сегодня"
-        android:textAlignment="center"
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="116dp"
+        android:text="Выберите предмет"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="252dp"
-        android:text="Решить вариант"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="232dp"
+        android:text="Математика"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="352dp"
-        android:text="Типовые задания"
+        android:layout_marginStart="137dp"
+        android:layout_marginTop="348dp"
+        android:text="Русский язык"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
