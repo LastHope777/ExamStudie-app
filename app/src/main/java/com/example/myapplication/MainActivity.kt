@@ -15,5 +15,4 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-    //I HATE NIGGERS
 }
