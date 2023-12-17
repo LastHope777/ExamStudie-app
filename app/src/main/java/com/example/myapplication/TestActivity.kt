@@ -17,20 +17,20 @@ class TestActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Создание экземпляра DatabaseHelper
-        val dbHelper = DatabaseHelper(this)
+        //val dbHelper = DatabaseHelper(this)
 
         tasks = getTasks()
 
         viewPager = findViewById(R.id.viewPager)
         val pagerAdapter = object : FragmentPagerAdapter(supportFragmentManager) {
-            override fun getCount(): Int = tasks.size * 2
+            override fun getCount(): Int = 1
 
             override fun getItem(position: Int): Fragment {
                 return QuestionFragment.newInstance(tasks[position % tasks.size])
             }
         }
 
-        viewPager.adapter = pagerAdapter
+    viewPager.adapter = pagerAdapter
     }
 
     // Получите ваши задания из базы данных или другого источника данных
