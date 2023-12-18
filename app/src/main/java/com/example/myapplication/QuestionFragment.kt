@@ -1,12 +1,14 @@
 package com.example.myapplication
 
-// QuestionFragment.kt
+
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
@@ -17,7 +19,7 @@ class QuestionFragment : Fragment() {
 
     private lateinit var binding: FragmentQuestionBinding
     private lateinit var task: Task
-    private val questionViews = mutableListOf<View>()
+    private lateinit var userAnswers: MutableList<String>
 
     companion object {
         fun newInstance(task: Task): QuestionFragment {
@@ -33,25 +35,68 @@ class QuestionFragment : Fragment() {
     ): View? {
         binding = FragmentQuestionBinding.inflate(inflater, container, false)
         return binding.root
+
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        userAnswers = MutableList(12) { "" }
         task.questions.forEachIndexed { index, question ->
             val questionView: View = binding.questionsContainer.getChildAt(index * 2)
             val userAnswerEditText: EditText =
                 binding.questionsContainer.getChildAt(index * 2 + 1) as EditText
 
-            setupQuestionViews(questionView, userAnswerEditText, question, index + 1)
+            setupQuestionViews(questionView, userAnswerEditText, question, index +1, 12)
         }
-    }
+
+
+        val finishButton: Button = binding.finishButton
+        finishButton.setOnClickListener {
+
+            val answer1: EditText = view.findViewById(R.id.userAnswerEditText1)
+            val answer2: EditText = view.findViewById(R.id.userAnswerEditText2)
+            val answer3: EditText = view.findViewById(R.id.userAnswerEditText3)
+            val answer4: EditText = view.findViewById(R.id.userAnswerEditText4)
+            val answer5: EditText = view.findViewById(R.id.userAnswerEditText5)
+            val answer6: EditText = view.findViewById(R.id.userAnswerEditText6)
+            val answer7: EditText = view.findViewById(R.id.userAnswerEditText7)
+            val answer8: EditText = view.findViewById(R.id.userAnswerEditText8)
+            val answer9: EditText = view.findViewById(R.id.userAnswerEditText9)
+            val answer10: EditText = view.findViewById(R.id.userAnswerEditText10)
+            val answer11: EditText = view.findViewById(R.id.userAnswerEditText11)
+            val answer12: EditText = view.findViewById(R.id.userAnswerEditText12)
+
+            val userAnswers = arrayListOf(
+                answer1.text.toString(),
+                answer2.text.toString(),
+                answer3.text.toString(),
+                answer4.text.toString(),
+                answer5.text.toString(),
+                answer6.text.toString(),
+                answer7.text.toString(),
+                answer8.text.toString(),
+                answer9.text.toString(),
+                answer10.text.toString(),
+                answer11.text.toString(),
+                answer12.text.toString()
+            )
+
+            val intent = Intent(activity, ResultActivity::class.java)
+            intent.putStringArrayListExtra("user_answers", ArrayList(userAnswers))
+            activity?.startActivity(intent)
+        }
+        }
+
+
+
 
     private fun setupQuestionViews(
         questionView: View,
         userAnswerEditText: EditText,
         question: Question,
-        questionIndex: Int
+        questionIndex: Int,
+        number: Int
     ) {
         if (question.isImageQuestion() && questionView is ImageView) {
             val imageName = "img${questionIndex}n1"
@@ -78,8 +123,11 @@ class QuestionFragment : Fragment() {
             }
 
             override fun afterTextChanged(s: Editable?) {
-// Опционально
+                val userAnswer = s?.toString() ?: ""
+                userAnswers[number - 1] = userAnswer
             }
         })
+
     }
+
 }
