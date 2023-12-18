@@ -54,5 +54,6 @@ dependencies {
     implementation ("androidx.databinding:databinding-runtime:8.2.0")
     implementation ("androidx.lifecycle:lifecycle-extensions:2.2.0") // Пример версии, обновите по необходимости
     implementation ("androidx.databinding:databinding-runtime:8.2.0")
+    implementation ("com.squareup.picasso:picasso:2.71828")
 
 }

@@ -1,12 +1,10 @@
-<!-- fragment_question.xml -->
-
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="395dp"
         android:layout_height="715dp"
         android:layout_alignParentStart="true"
@@ -19,12 +17,13 @@
         android:layout_marginBottom="16dp">
 
         <LinearLayout
+            android:id="@+id/questionsContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-            <TextView
-                android:id="@+id/questionTextView1"
+            <ImageView
+                android:id="@+id/questionImageView1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -40,8 +39,8 @@
                 android:layout_marginEnd="16dp"
                 android:hint="Your Answer 1" />
 
-            <TextView
-                android:id="@+id/questionTextView2"
+            <ImageView
+                android:id="@+id/questionImageView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -57,8 +56,8 @@
                 android:layout_marginEnd="16dp"
                 android:hint="Your Answer 2" />
 
-            <TextView
-                android:id="@+id/questionTextView3"
+            <ImageView
+                android:id="@+id/questionImageView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -74,8 +73,8 @@
                 android:layout_marginEnd="16dp"
                 android:hint="Your Answer 3" />
 
-            <TextView
-                android:id="@+id/questionTextView4"
+            <ImageView
+                android:id="@+id/questionImageView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -91,8 +90,8 @@
                 android:layout_marginEnd="16dp"
                 android:hint="Your Answer 4" />
 
-            <TextView
-                android:id="@+id/questionTextView5"
+            <ImageView
+                android:id="@+id/questionImageView5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -108,8 +107,8 @@
                 android:layout_marginEnd="16dp"
                 android:hint="Your Answer 5" />
 
-            <TextView
-                android:id="@+id/questionTextView6"
+            <ImageView
+                android:id="@+id/questionImageView6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -125,8 +124,8 @@
                 android:layout_marginEnd="16dp"
                 android:hint="Your Answer 6" />
 
-            <TextView
-                android:id="@+id/questionTextView7"
+            <ImageView
+                android:id="@+id/questionImageView7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -142,8 +141,8 @@
                 android:layout_marginEnd="16dp"
                 android:hint="Your Answer 7" />
 
-            <TextView
-                android:id="@+id/questionTextView8"
+            <ImageView
+                android:id="@+id/questionImageView8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -159,8 +158,8 @@
                 android:layout_marginEnd="16dp"
                 android:hint="Your Answer 8" />
 
-            <TextView
-                android:id="@+id/questionTextView9"
+            <ImageView
+                android:id="@+id/questionImageView9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -176,8 +175,8 @@
                 android:layout_marginEnd="16dp"
                 android:hint="Your Answer 9" />
 
-            <TextView
-                android:id="@+id/questionTextView10"
+            <ImageView
+                android:id="@+id/questionImageView10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -193,8 +192,8 @@
                 android:layout_marginEnd="16dp"
                 android:hint="Your Answer 10" />
 
-            <TextView
-                android:id="@+id/questionTextView11"
+            <ImageView
+                android:id="@+id/questionImageView11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -210,8 +209,8 @@
                 android:layout_marginEnd="16dp"
                 android:hint="Your Answer 11" />
 
-            <TextView
-                android:id="@+id/questionTextView12"
+            <ImageView
+                android:id="@+id/questionImageView12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -229,6 +228,6 @@
 
 
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 </RelativeLayout>

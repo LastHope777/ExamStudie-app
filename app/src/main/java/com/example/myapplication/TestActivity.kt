@@ -9,45 +9,31 @@ import com.example.myapplication.databinding.ActivityTestBinding
 
 class TestActivity : AppCompatActivity() {
     private lateinit var viewPager: ViewPager
-    private lateinit var tasks: List<Task>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityTestBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Создание экземпляра DatabaseHelper
-        //val dbHelper = DatabaseHelper(this)
-
-        tasks = getTasks()
+        val tasks = getTasks()
 
         viewPager = findViewById(R.id.viewPager)
         val pagerAdapter = object : FragmentPagerAdapter(supportFragmentManager) {
-            override fun getCount(): Int = 1
+            override fun getCount(): Int = tasks.size
 
             override fun getItem(position: Int): Fragment {
-                return QuestionFragment.newInstance(tasks[position % tasks.size])
+                return QuestionFragment.newInstance(tasks[position])
             }
         }
 
-    viewPager.adapter = pagerAdapter
+        viewPager.adapter = pagerAdapter
     }
 
-    // Получите ваши задания из базы данных или другого источника данных
     private fun getTasks(): List<Task> {
-        val poolQuestion1 = listOf(
-            Question("1 + 1 = ?", "2"),
-            Question("2 + 3 = ?", "5")
-        )
+        val taskImages = (1..12).map { "img${it}n1" } // Предположим, что у вас есть 12 изображений с такими именами
 
-        val poolQuestion2 = listOf(
-            Question("3 + 2x = 5, решите для x", "1"),
-            Question("1 + 2x = 3, решите для x", "1")
-        )
-
-        val task1 = Task(poolQuestion1, "", "")
-        val task2 = Task(poolQuestion2, "", "")
-
-        return listOf(task1, task2)
+        return taskImages.map { imageUrl ->
+            Task((1..12).map { Question("Your Answer $it", imageUrl) })
+        }
     }
 }

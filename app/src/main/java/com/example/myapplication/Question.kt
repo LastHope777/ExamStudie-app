@@ -1,4 +1,7 @@
 package com.example.myapplication
 
-class Question(val text: String, val correctAnswer: String)
-
+data class Question(val text: String, val imageUrl: String? = null) {
+    fun isImageQuestion(): Boolean {
+        return imageUrl != null
+    }
+}
