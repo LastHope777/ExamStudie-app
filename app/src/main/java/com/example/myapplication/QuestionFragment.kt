@@ -103,7 +103,21 @@ class QuestionFragment : Fragment() {
             val resourceId = resources.getIdentifier(imageName, "drawable", requireContext().packageName)
 
             if (resourceId != 0) {
-                Picasso.get().load(resourceId).into(questionView)
+                if (questionIndex == 11){
+                    Picasso.get().load(resourceId).resize(1200, 800).into(questionView)
+                }
+                else if (questionIndex == 2){
+                    Picasso.get().load(resourceId).resize(1200, 700).into(questionView)
+                }
+                else if (questionIndex == 3){
+                    Picasso.get().load(resourceId).resize(1200, 300).into(questionView)
+                }
+                else if (questionIndex == 9){
+                    Picasso.get().load(resourceId).resize(1200, 600).into(questionView)
+                }
+                else{
+                    Picasso.get().load(resourceId).resize(1200, 200).into(questionView)
+                }
             } else {
 // Если изображение не найдено, используйте заглушку
                 Picasso.get().load(R.drawable.placeholder_image).into(questionView)
