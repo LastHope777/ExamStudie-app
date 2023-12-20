@@ -41,6 +41,8 @@ class QuestionFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
         userAnswers = MutableList(12) { "" }
         task.questions.forEachIndexed { index, question ->
             val questionView: View = binding.questionsContainer.getChildAt(index * 2)

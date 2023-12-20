@@ -2,10 +2,9 @@ package com.example.myapplication
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentPagerAdapter
+import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.example.myapplication.databinding.ActivityTestBinding
 
@@ -20,8 +19,8 @@ class TestActivity : AppCompatActivity() {
         val tasks = getTasks()
 
         viewPager = findViewById(R.id.viewPager)
-        val pagerAdapter = object : FragmentPagerAdapter(supportFragmentManager) {
-            override fun getCount(): Int = tasks.size
+        val pagerAdapter = object : FragmentStatePagerAdapter(supportFragmentManager) {
+            override fun getCount(): Int = 1 // Только одна страница
 
             override fun getItem(position: Int): Fragment {
                 return QuestionFragment.newInstance(tasks[position])
