@@ -9,8 +9,8 @@ class MainMenu : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
-        val button_var: Button = findViewById(R.id.button2)
-        button_var.setOnClickListener {
+        val button_var1: Button = findViewById(R.id.button2)
+        button_var1.setOnClickListener {
             val intent = Intent(this, TestActivity::class.java)
             startActivity(intent)
         }

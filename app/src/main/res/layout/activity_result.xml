@@ -260,11 +260,22 @@
                 android:textSize="18sp"
                 android:text="Результат: 0 баллов из 12 (ЕГЭ)" />
 
+            <TextView
+                android:id="@+id/incorrectAnswersLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/resultTable"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="80dp"
+                android:text="Решения тех номеров, которые сделаны неправильно:"
+                android:textSize="18sp"/>
+
+
             <LinearLayout
                 android:id="@+id/imagesLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/resultTextView"
+                android:layout_below="@+id/incorrectAnswersLabel"
                 android:orientation="vertical">
                 <!-- Здесь будут добавляться изображения -->
             </LinearLayout>
