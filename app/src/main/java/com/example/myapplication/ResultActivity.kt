@@ -78,7 +78,7 @@ class ResultActivity : AppCompatActivity() {
 
         for (incorrectAnswer in incorrectAnswers) {
             val imageView = ImageView(this)
-            val resourceId = resources.getIdentifier("img${incorrectAnswer}n1", "drawable", packageName)
+            val resourceId = resources.getIdentifier("ans${incorrectAnswer}n1", "drawable", packageName)
 
             if (resourceId != 0) {
                 imageView.setImageResource(resourceId)
